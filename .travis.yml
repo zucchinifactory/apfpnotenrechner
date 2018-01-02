@@ -1,0 +1,26 @@
+language: generic
+script:
+  - |
+
+    #!/bin/bash
+
+    set -e
+
+    echo "Print environment variables for debugging"
+    printenv
+
+    if [ "${TRAVIS_PULL_REQUEST}" != "false" ]
+    then
+
+      echo "This build has been triggered by a pull request"
+      echo "No deployment"
+
+    else
+
+      echo "This build has not been triggered by a pull request"
+      echo "Start deployment to Glitch.com"
+      echo "${TRAVIS_REPO_SLUG}"
+
+    fi
+
+    echo "Done"
