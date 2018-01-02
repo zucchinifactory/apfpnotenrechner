@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP/FP Notenrechner</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,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">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+    <style>
+        * {
+            font-family: sans-serif;
+            font-size: 12pt;
+            text-shadow: 1px 1px 1px #cccccc;
+            }
+        body {
+            margin: 0px;
+            padding: 20px 20px 100px 20px;
+            }
+        h1 {
+            margin: 0px;
+            padding: 0px;
+            }
+        div.hide-initially {
+            display: none;
+            }
+        div.status-success {
+            color: #00b000;
+            }
+        div.status-warning {
+            color: #f39d1e;
+            }
+        div.status-error {
+            color: #db0011;
+            }
+        span {
+            white-space: nowrap;
+            }
+        input {
+            width: 80px;
+            text-align: center;
+            }
+    </style>
+
+    <script>
+        function Modulwechsel(Handle) {
+            Elemente = document.getElementsByTagName("div");
+            for (i = 0; i < Elemente.length; i++) {
+                Elemente[i].classList.remove("hide-initially");
+                }
+            Elemente = document.getElementsByTagName("a");
+            for (i = 0; i < Elemente.length; i++) {
+                if (Elemente[i].parentElement == Handle.parentElement) {
+                    Elemente[i].className = "pure-button";
+                    }
+                }
+            Handle.className = "pure-button pure-button-primary";
+            document.getElementById("Beschreibung").innerHTML = Handle.getAttribute("data-beschreibung");
+            Punkterechnung();
+            }
+        function PlusMinus(Handle, Addend) {
+            Elemente = document.getElementsByTagName("input");
+            for (i = 0; i < Elemente.length; i++) {
+                if (Elemente[i].parentElement == Handle.parentElement) {
+                    Elemente[i].value = parseInt(Elemente[i].value) + Addend;
+                    break;
+                    }
+                }
+            Punkterechnung();
+            }
+        function Notenschluessel(Punkte) {
+            if (Punkte > 90) {
+                return 1.0;
+                }
+            if (Punkte > 80) {
+                return 1.3;
+                }
+            if (Punkte > 70) {
+                return 1.7;
+                }
+            if (Punkte > 60) {
+                return 2.0;
+                }
+            if (Punkte > 50) {
+                return 2.3;
+                }
+            if (Punkte > 40) {
+                return 2.7;
+                }
+            if (Punkte > 30) {
+                return 3.0;
+                }
+            if (Punkte > 20) {
+                return 3.3;
+                }
+            if (Punkte > 10) {
+                return 3.7;
+                }
+            return "unbekannt";
+            }
+        function Punkterechnung() {
+            Elemente = document.getElementsByTagName("a");
+            for (i = 0; i < Elemente.length; i++) {
+                if (Elemente[i].className == "pure-button pure-button-primary") {
+                    n_Testate = parseInt(Elemente[i].getAttribute("data-testate"));
+                    break;
+                    }
+                }
+            n_Minus = parseInt(document.getElementById("Minus").value);
+            n_Null = parseInt(document.getElementById("Null").value);
+            n_Plus = parseInt(document.getElementById("Plus").value);
+            n_Plusplus = parseInt(document.getElementById("Plusplus").value);
+            N = n_Minus + n_Null + n_Plus + n_Plusplus;
+            document.getElementById("TestateAktuell").innerHTML = N;
+            document.getElementById("TestateGesamt").innerHTML = n_Testate;
+            Handle = document.getElementById("TestateStatus");
+            Handle.classList.remove("status-success");
+            Handle.classList.remove("status-warning");
+            Handle.classList.remove("status-error");
+            if (N < 1) {
+                Handle.classList.add("status-error");
+                }
+            else if (N < n_Testate) {
+                Handle.classList.add("status-warning");
+                }
+            else if (N == n_Testate) {
+                Handle.classList.add("status-success");
+                }
+            else if (N > n_Testate) {
+                Handle.classList.add("status-error");
+                }
+            Vorfaktor = 100 / n_Testate;
+            Punkte = 0;
+            Punkte += (Vorfaktor * 0.0) * n_Minus;
+            Punkte += (Vorfaktor * 0.5) * n_Null;
+            Punkte += (Vorfaktor * 1.0) * n_Plus;
+            Punkte += (Vorfaktor * 1.5) * n_Plusplus;
+            VorschauNurMinus = Punkte + ((Vorfaktor * 0.0) * (n_Testate - N));
+            VorschauNurNull = Punkte + ((Vorfaktor * 0.5) * (n_Testate - N));
+            VorschauNurPlus = Punkte + ((Vorfaktor * 1.0) * (n_Testate - N));
+            VorschauNurPlusplus = Punkte + ((Vorfaktor * 1.5) * (n_Testate - N));
+            VorschauWeiter = Punkte * (n_Testate / N);
+            document.getElementById("VorschauNurMinusPunkte").innerHTML = VorschauNurMinus.toFixed(0) + "%";
+            document.getElementById("VorschauNurMinusNote").innerHTML = Notenschluessel(VorschauNurMinus);
+            document.getElementById("VorschauNurNullPunkte").innerHTML = VorschauNurNull.toFixed(0) + "%";
+            document.getElementById("VorschauNurNullNote").innerHTML = Notenschluessel(VorschauNurNull);
+            document.getElementById("VorschauNurPlusPunkte").innerHTML = VorschauNurPlus.toFixed(0) + "%";
+            document.getElementById("VorschauNurPlusNote").innerHTML = Notenschluessel(VorschauNurPlus);
+            document.getElementById("VorschauNurPlusplusPunkte").innerHTML = VorschauNurPlusplus.toFixed(0) + "%";
+            document.getElementById("VorschauNurPlusplusNote").innerHTML = Notenschluessel(VorschauNurPlusplus);
+            document.getElementById("VorschauWeiterPunkte").innerHTML = VorschauWeiter.toFixed(0) + "%";
+            document.getElementById("VorschauWeiterNote").innerHTML = Notenschluessel(VorschauWeiter);
+            }
+    </script>
+
+</head>
+
+<body>
+
+<h1>AP/FP Notenrechner</h1>
+
+<p>
+    Aus den vergebenen Testaten können die erreichten Punkte und die dazugehörige Note ermittelt werden.
+    Sollten noch nicht alle Testate feststehen, lässt sich eine Vorschau berechnen.
+</p>
+
+<form class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label>Modulauswahl</label>
+            <span>
+                <a href="javascript:void(0)" onclick="Modulwechsel(this)" class="pure-button" data-testate="30" data-beschreibung="Das AP1 besteht aus 15 Versuchen. Zu jedem Versuch gibt es ein Vortestat und ein Haupttestat. Es gibt also insgesamt 30 Testate.">AP1</a>
+                <a href="javascript:void(0)" onclick="Modulwechsel(this)" class="pure-button" data-testate="40" data-beschreibung="AP2.1 und AP2.2 bestehen aus jeweils 10 Versuchen. Zu jedem Versuch gibt es ein Vortestat und ein Haupttestat. Es gibt also insgesamt 40 Testate.">AP2.1 &amp; AP2.2</a>
+                <a href="javascript:void(0)" onclick="Modulwechsel(this)" class="pure-button" data-testate="55" data-beschreibung="Das FP besteht aus 8 Versuchen, 2 besonderen Ausarbeitungen und 1 Seminarvortrag. Zu jedem Versuch gibt es ein Testat für Vorbereitung (V), praktische Durchführung (D), Protokollführung (P), Auswertung (A) und kritische Würdigung (K) sowie zusätzlich je fünf Testate für kurze/lange besondere Ausarbeitung und Seminarvortrag. Es gibt also insgesamt 55 Testate.">FP</a>
+            </span>
+        </div>
+        <div class="pure-controls hide-initially" id="Beschreibung">
+            Bitte ein Modul auswählen.
+        </div>
+        <br>
+        <div class="pure-control-group hide-initially">
+            <label>Anzahl "&#xFF0D;" Testate</label>
+            <span>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, -10)" class="pure-button">-10</a>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, -1)" class="pure-button">-1</a>
+                <input id="Minus" type="text" value="0" autocomplete="off" style="color: black; background-color: white;" disabled>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, 1)" class="pure-button">+1</a>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, 10)" class="pure-button">+10</a>
+            </span>
+        </div>
+        <div class="pure-control-group hide-initially">
+            <label>Anzahl "&#xFF10;" Testate</label>
+            <span>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, -10)" class="pure-button">-10</a>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, -1)" class="pure-button">-1</a>
+                <input id="Null" type="text" value="0" autocomplete="off" style="color: black; background-color: white;" disabled>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, 1)" class="pure-button">+1</a>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, 10)" class="pure-button">+10</a>
+            </span>
+        </div>
+        <div class="pure-control-group hide-initially">
+            <label>Anzahl "&#xFF0B;" Testate</label>
+            <span>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, -10)" class="pure-button">-10</a>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, -1)" class="pure-button">-1</a>
+                <input id="Plus" type="text" value="0" autocomplete="off" style="color: black; background-color: white;" disabled>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, 1)" class="pure-button">+1</a>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, 10)" class="pure-button">+10</a>
+            </span>
+        </div>
+        <div class="pure-control-group hide-initially">
+            <label>Anzahl "&#xFF0B;&#xFF0B;" Testate</label>
+            <span>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, -10)" class="pure-button">-10</a>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, -1)" class="pure-button">-1</a>
+                <input id="Plusplus" type="text" value="0" autocomplete="off" style="color: black; background-color: white;" disabled>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, 1)" class="pure-button">+1</a>
+                <a href="javascript:void(0)" onclick="PlusMinus(this, 10)" class="pure-button">+10</a>
+            </span>
+        </div>
+        <div class="pure-controls hide-initially" id="TestateStatus">
+            Im Moment sind <span id="TestateAktuell"></span> von insgesamt <span id="TestateGesamt"></span> Testaten eingetragen.
+        </div>
+    </fieldset>
+</form>
+
+<div class="hide-initially">
+
+    <hr>
+
+    <p>
+        <b>Zum verwendeten Bewertungssystem:</b>
+        Wurden alle Testate mit "&#xFF0D;", "&#xFF10;", "&#xFF0B;" beziehungsweise "&#xFF0B;&#xFF0B;" benotet, sind 0%, 50%, 100% beziehungsweise 150% der Gesamtpunktzahl erreicht.
+        Alle 10 Prozentpunkte wird die nächste Notenstufe vergeben.
+        Für Note 1,0 ist eine Punktzahl von mehr als 90% nötig, für Note 1,3 mehr als 80%, für Note 1,7 mehr als 70% - und so weiter.
+    </p>
+
+    <table class="pure-table pure-table-horizontal">
+        <thead>
+            <tr>
+                <th>Restliche Testate</th>
+                <th>Punkte</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alle "&#xFF0D;"</td>
+                <td id="VorschauNurMinusPunkte"></td>
+                <td id="VorschauNurMinusNote"></td>
+            </tr>
+            <tr>
+                <td>Alle "&#xFF10;"</td>
+                <td id="VorschauNurNullPunkte"></td>
+                <td id="VorschauNurNullNote"></td>
+            </tr>
+            <tr>
+                <td>Alle "&#xFF0B;"</td>
+                <td id="VorschauNurPlusPunkte"></td>
+                <td id="VorschauNurPlusNote"></td>
+            </tr>
+            <tr>
+                <td>Alle "&#xFF0B;&#xFF0B;"</td>
+                <td id="VorschauNurPlusplusPunkte"></td>
+                <td id="VorschauNurPlusplusNote"></td>
+            </tr>
+            <tr>
+                <td>Weiter wie bisher</td>
+                <td id="VorschauWeiterPunkte"></td>
+                <td id="VorschauWeiterNote"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+
+</html>
