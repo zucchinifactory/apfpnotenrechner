@@ -4,9 +4,9 @@ script:
 
     #!/bin/bash
 
-    set -e
-
     (
+
+      set -e
 
       echo "Print environment variables for debugging"
       printenv
