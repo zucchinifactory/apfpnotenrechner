@@ -14,13 +14,19 @@ script:
 
       echo "This build has been triggered by a pull request"
       echo "No deployment"
-
-    else
-
-      echo "This build has not been triggered by a pull request"
-      echo "Start deployment to Glitch.com"
-      echo "${TRAVIS_REPO_SLUG}"
+      exit 0
 
     fi
 
+    if [ "${TRAVIS_BRANCH}" != "master" ]
+    then
+
+      echo "This build is for another branch than master"
+      echo "No deployment"
+      exit 0
+
+    fi
+
+    echo "Start deployment to Glitch.com"
+    echo "${TRAVIS_REPO_SLUG}"
     echo "Done"
