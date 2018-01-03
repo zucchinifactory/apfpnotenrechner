@@ -1,3 +1,3 @@
 # apfpnotenrechner
 
-v0.03
+v0.04
