@@ -30,7 +30,7 @@ script:
       fi
 
       echo "Start deployment to Glitch.com"
-      wget --post-data="token=${GLITCH_TOKEN}&projectId=${GLITCH_PROJECTID}&repo=${TRAVIS_REPO_SLUG}" https://api.glitch.com/project/githubImport
+      wget -d --post-data="token=${GLITCH_TOKEN}&projectId=${GLITCH_PROJECTID}&repo=${TRAVIS_REPO_SLUG}" https://api.glitch.com/project/githubImport
       echo "Done"
 
     )
