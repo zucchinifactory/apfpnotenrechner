@@ -6,32 +6,32 @@ script:
 
     set -e
 
-    echo "Print environment variables for debugging"
-    printenv
-
     (
 
-    if [ "${TRAVIS_PULL_REQUEST}" != "false" ]
-    then
+      echo "Print environment variables for debugging"
+      printenv
 
-      echo "This build has been triggered by a pull request"
-      echo "No deployment"
-      exit 0
+      if [ "${TRAVIS_PULL_REQUEST}" != "false" ]
+      then
 
-    fi
+        echo "This build has been triggered by a pull request"
+        echo "No deployment"
+        exit 0
 
-    if [ "${TRAVIS_BRANCH}" != "master" ]
-    then
+      fi
 
-      echo "This build is for another branch than master"
-      echo "No deployment"
-      exit 0
+      if [ "${TRAVIS_BRANCH}" != "master" ]
+      then
 
-    fi
+        echo "This build is for another branch than master"
+        echo "No deployment"
+        exit 0
 
-    echo "Start deployment to Glitch.com"
-    wget --post-data="token=test&projectId=test&repo=test" https://api.glitch.com/project/githubImport
-    #wget --post-data="token=${GLITCH_TOKEN}&projectId=${GLITCH_PROJECTID}&repo=${TRAVIS_REPO_SLUG}" https://api.glitch.com/project/githubImport
-    echo "Done"
+      fi
+
+      echo "Start deployment to Glitch.com"
+      wget --post-data="token=test&projectId=test&repo=test" https://api.glitch.com/project/githubImport
+      #wget --post-data="token=${GLITCH_TOKEN}&projectId=${GLITCH_PROJECTID}&repo=${TRAVIS_REPO_SLUG}" https://api.glitch.com/project/githubImport
+      echo "Done"
 
     )
